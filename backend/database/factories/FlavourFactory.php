@@ -18,7 +18,18 @@ class FlavourFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->randomElement([
+                'Chocolate',
+                'Vanilla',
+                'Strawberry',
+                'Lemon',
+                'Red Velvet',
+                'Carrot',
+                'Coffee',
+                'Pistachio',
+                'Coconut',
+                'Banana',
+            ]),
         ];
     }
 }
