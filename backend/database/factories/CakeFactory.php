@@ -17,33 +17,75 @@ class CakeFactory extends Factory
      */
     public function definition(): array
     {
+        $cake = fake()->randomElement([
+            [
+                'name' => 'Chocolate Delight',
+                'description' => 'A rich and moist chocolate cake layered with creamy chocolate frosting.',
+                'flavour_id' => 1,
+                'price' => 20.00,
+            ],
+            [
+                'name' => 'Vanilla Dream',
+                'description' => 'A classic vanilla cake with a light and fluffy texture, perfect for any occasion.',
+                'flavour_id' => 2,
+                'price' => 18.00,
+            ],
+            [
+                'name' => 'Strawberry Surprise',
+                'description' => 'A delightful strawberry cake with fresh strawberries and a creamy strawberry frosting.',
+                'flavour_id' => 3,
+                'price' => 22.00,
+            ],
+            [
+                'name' => 'Lemon Zest',
+                'description' => 'A zesty lemon cake with a refreshing lemon flavor and a tangy lemon glaze.',
+                'flavour_id' => 4,
+                'price' => 19.00,
+            ],
+            [
+                'name' => 'Red Velvet Romance',
+                'description' => 'A luxurious red velvet cake with a smooth cream cheese frosting.',
+                'flavour_id' => 5,
+                'price' => 24.00,
+            ],
+            [
+                'name' => 'Carrot Cake Classic',
+                'description' => 'A moist carrot cake with a hint of spice and a creamy cream cheese frosting.',
+                'flavour_id' => 6,
+                'price' => 21.00,
+            ],
+            [
+                'name' => 'Coffee Infusion',
+                'description' => 'A rich coffee-flavored cake with a smooth coffee buttercream.',
+                'flavour_id' => 7,
+                'price' => 23.00,
+            ],
+            [
+                'name' => 'Pistachio Perfection',
+                'description' => 'A delicate pistachio cake with a nutty flavor and a creamy pistachio frosting.',
+                'flavour_id' => 8,
+                'price' => 25.00,
+            ],
+            [
+                'name' => 'Coconut Bliss',
+                'description' => 'A tropical coconut cake with a light coconut frosting.',
+                'flavour_id' => 9,
+                'price' => 20.00,
+            ],
+            [
+                'name' => 'Banana Bonanza',
+                'description' => 'A moist banana cake with a rich banana flavor and a creamy frosting.',
+                'flavour_id' => 10,
+                'price' => 19.00,
+            ],
+        ]);
+
         return [
-            'name' => fake()->randomElement([
-                'Chocolate Delight',
-                'Vanilla Dream',
-                'Strawberry Surprise',
-                'Lemon Zest',
-                'Red Velvet Romance',
-                'Carrot Cake Classic',
-                'Coffee Infusion',
-                'Pistachio Perfection',
-                'Coconut Bliss',
-                'Banana Bonanza',
-            ]),
-            'description' => fake()->randomElement([
-                'A rich and moist chocolate cake topped with creamy chocolate ganache.',
-                'A light and fluffy vanilla cake layered with smooth vanilla buttercream.',
-                'A sweet and tangy strawberry cake filled with fresh strawberries and whipped cream.',
-                'A zesty lemon cake with a refreshing lemon glaze.',
-                'A decadent red velvet cake layered with cream cheese frosting.',
-                'A classic carrot cake packed with spices and topped with cream cheese frosting.',
-                'A bold coffee-flavored cake with a smooth coffee buttercream.',
-                'A nutty pistachio cake layered with pistachio cream.',
-                'A tropical coconut cake filled with coconut cream and topped with toasted coconut flakes.',
-                'A moist banana cake loaded with ripe bananas and topped with a rich caramel glaze.',
-            ]),
-            'price' => fake()->randomFloat(2, 5, 50),
-            'flavour_id' => \App\Models\Flavour::inRandomOrder()->first()->id,
+            'name' => $cake['name'],
+            'flavour_id' => $cake['flavour_id'],
+            'description' => $cake['description'],
+            'price' => $cake['price'],
+            
         ];
     }
 }
