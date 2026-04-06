@@ -6,15 +6,54 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/frontend/main.css">
     <link rel="stylesheet" href="css/frontend/grid.css">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="module" src="js/frontend/main.js"></script>
 </head>
 <body>
 
-    <header class="grid-con"></header>
+    <header class="grid-con">
+        <h1 class="hidden">Cake API</h1>
+    </header>
 
-    <main class="grid-con"></main>
+    <main id="app">
+        <section class="grid-con">
+            <h2>Cakes</h2>
+            <p></p>
+            <p></p>
 
-    <footer class="grid-con"></footer>
+            <div v-if="loadingCakes">
+                <img class="loader" src="imgs/loader.svg" alt="Loading ...">
+            </div>
+
+            <ul id="cake-list" v-else>
+                <li v-for="cake in cakesData" :key="cake.id">
+                    <h3>
+                    Name:
+                    <button @click="getCake(cake.id)">
+                        {{cake.name}}
+                    </button>
+                    </h3>
+                </li>
+            </ul>
+        </section>
+        <section class="grid-con">
+            <div v-if="loadingCake">
+                <img class="loader" src="imgs/loader.svg" alt="Loading cake details">
+            </div>
+
+            <div v-else-if="error">
+                {{ error }}
+            </div>
+
+            <div v-else-if="selectedCake" id="info-box">
+                <h2>Cake Details</h2>
+            </div>
+        </section>
+    </main>
+
+    <footer class="grid-con">
+            <p>&copy; 2026 Cake API. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
