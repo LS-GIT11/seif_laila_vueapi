@@ -33,6 +33,32 @@ const app = Vue.createApp({
                 });
         },
 
+        getCake(id) {
+            this.loadingCake = true;
+            this.error = null;
+            this.selectedCake = null;
+
+            fetch(`http://127.0.0.1:8000/api/cakes/${id}`)
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error("Failed to fetch cake details");
+                    }
+                    return res.json();
+                })
+                .then(cake => {
+                    if (!cake) {
+                        throw new Error("Cake not found");
+                    }
+
+                    this.selectedCake = cake;
+                })
+                .catch(err => {
+                    this.error = err.message;
+                })
+                .finally(() => {
+                    this.loadingCake = false
+                });
+        }
         
     }
 });
