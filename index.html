@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="frontend/css/main.css">
     <link rel="stylesheet" href="frontend/css/grid.css">
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="module" src="js/frontend/main.js"></script>
+    <script type="module" src="frontend/js/main.js"></script>
 </head>
 <body>
 
@@ -29,7 +29,6 @@
             <ul id="cake-list" v-else>
                 <li v-for="cake in cakesData" :key="cake.id">
                     <h3>
-                    Name:
                     <button @click="getCake(cake.id)">
                         {{cake.name}}
                     </button>
@@ -48,6 +47,9 @@
 
             <div v-else-if="selectedCake" id="info-box">
                 <h2>Cake Details</h2>
+                <p><strong>Name:</strong> {{ selectedCake.name }}</p>
+                <p><strong>Description:</strong> {{ selectedCake.description }}</p>
+                <p><strong>Price:</strong> ${{ selectedCake.price }}</p>
             </div>
         </section>
     </main>
