@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/frontend/main.css">
-    <link rel="stylesheet" href="css/frontend/grid.css">
+    <link rel="stylesheet" href="frontend/css/main.css">
+    <link rel="stylesheet" href="frontend/css/grid.css">
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="module" src="js/frontend/main.js"></script>
 </head>
 <body>
 
     <header class="grid-con">
-        <h1 class="hidden">Cake API</h1>
+        <h1 class="col-span-1 m-col-span-3 l-col-span-2">Cakes</h1>
+        <a class="col-span-1 col-start-4 m-col-span-2 m-col-start-11 l-col-span-3 l-col-start-11" href="http://127.0.0.1:8000/api/cakes">cake api</a>
     </header>
 
     <main id="app">
         <section class="grid-con">
-            <h2>Cakes</h2>
-            <p></p>
-            <p></p>
+            <h2 class="full">Cakes</h2>
+            <p class="intro-text full"></p>
+            <p class="intro-text full"></p>
 
-            <div v-if="loadingCakes">
-                <img class="loader" src="imgs/loader.svg" alt="Loading ...">
+            <div v-if="loadingCakes" class="loader-con">
+                <img class="loader" src="frontend/imgs/loader.svg" alt="Loading ...">
             </div>
 
             <ul id="cake-list" v-else>
@@ -37,11 +38,11 @@
             </ul>
         </section>
         <section class="grid-con">
-            <div v-if="loadingCake">
-                <img class="loader" src="imgs/loader.svg" alt="Loading cake details">
+            <div v-if="loadingCake" class="loader-con">
+                <img class="loader" src="frontend/imgs/loader.svg" alt="Loading cake details">
             </div>
 
-            <div v-else-if="error">
+            <div v-else-if="error" class="error-box">
                 {{ error }}
             </div>
 
@@ -52,7 +53,7 @@
     </main>
 
     <footer class="grid-con">
-            <p>&copy; 2026 Cake API. All rights reserved.</p>
+            <p class="full">&copy; 2026 Cake API. All rights reserved.</p>
     </footer>
 
 </body>
