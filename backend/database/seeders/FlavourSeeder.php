@@ -9,6 +9,6 @@ class FlavourSeeder extends Seeder
 {
     public function run(): void
     {
-        Flavour::factory(10)->create();
+        Flavour::factory(20)->create();
     }
 }

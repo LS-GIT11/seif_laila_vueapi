@@ -51,6 +51,11 @@
                 <p><strong>Description:</strong> {{ selectedCake.description }}</p>
                 <p><strong>Price:</strong> ${{ selectedCake.price }}</p>
             </div>
+
+            <div v-else id="info-box" class="placeholder-box">
+                <h2>Cake Details</h2>
+                <p>click a cake from the list to view its details here.</p>
+            </div>
         </section>
     </main>
 
