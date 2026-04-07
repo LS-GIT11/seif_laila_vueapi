@@ -53,8 +53,8 @@ class CakeFactory extends Factory
         'Sponge Cake',
         'Genoise',
     ]),
-        'description' => fake()->sentence(),
-        'price' => fake()->randomFloat(2, 5, 50),
+        'description' => fake()->sentence(35),
+        'price' => fake()->randomFloat(2, 5, 30),
         'flavour_id' => fake()->numberBetween(1, 10),
         
     ];
