@@ -16,11 +16,11 @@
         <a class="col-span-1 col-start-4 m-col-span-2 m-col-start-11 l-col-span-3 l-col-start-11" href="http://127.0.0.1:8000/api/cakes">cake api</a>
     </header>
 
-    <main id="app">
-        <section class="grid-con">
-            <h2 class="full">Cakes</h2>
-            <p class="intro-text full"></p>
-            <p class="intro-text full"></p>
+    <main id="app" class="grid-con">
+        <section class="full">
+            <h2 class="full">Discover Your New Favorite!</h2>
+            <p class="intro-text full">Sweet and delicious! Browse our selection of cakes and various other treats we have to offer.</p>
+            <p class="instruction-text full">Scroll through the list of cakes below side to side! Then click on a cake to see its details.</p>
 
             <div v-if="loadingCakes" class="loader-con">
                 <img class="loader" src="frontend/imgs/loader.svg" alt="Loading ...">
@@ -36,7 +36,7 @@
                 </li>
             </ul>
         </section>
-        <section class="grid-con">
+        <section class="full">
             <div v-if="loadingCake" class="loader-con">
                 <img class="loader" src="frontend/imgs/loader.svg" alt="Loading cake details">
             </div>
