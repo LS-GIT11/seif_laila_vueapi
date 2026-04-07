@@ -56,7 +56,7 @@ const app = Vue.createApp({
                     this.error = err.message;
                 })
                 .finally(() => {
-                    this.loadingCake = false
+                    this.loadingCake = false;
                 });
         }
         
