@@ -8,7 +8,7 @@ class CakeController extends Controller
 {
     public function index()
     {
-        return Cake::all();
+        return Cake::orderBy('name')->get();
     }
 
     public function show($id)
