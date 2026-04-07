@@ -17,10 +17,10 @@
     </header>
 
     <main id="app" class="grid-con">
-        <section class="full">
+        <section class="full hero">
             <h2 class="full">Discover Your New Favorite!</h2>
-            <p class="intro-text full">Sweet and delicious! Browse our selection of cakes and various other treats we have to offer.</p>
-            <p class="instruction-text full">Scroll through the list of cakes below side to side! Then click on a cake to see its details.</p>
+            <p class="intro-text full">Browse our selection of cakes and various other treats</p>
+            <p class="instruction-text full">Scroll side to side! Then click on a cake to see its details</p>
 
             <div v-if="loadingCakes" class="loader-con">
                 <img class="loader" src="frontend/imgs/loader.svg" alt="Loading ...">
@@ -47,9 +47,9 @@
 
             <div v-else-if="selectedCake" id="info-box">
                 <h2>Cake Details</h2>
-                <p><strong>Name:</strong> {{ selectedCake.name }}</p>
-                <p><strong>Description:</strong> {{ selectedCake.description }}</p>
-                <p><strong>Price:</strong> ${{ selectedCake.price }}</p>
+                <p id="name-tag"> {{ selectedCake.name }}</p>
+                <p id="description-tag"> {{ selectedCake.description }}</p>
+                <p id="price-tag">${{ selectedCake.price }}</p>
             </div>
 
             <div v-else id="info-box" class="placeholder-box">

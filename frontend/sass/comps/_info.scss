@@ -2,14 +2,46 @@
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 25px rgba(28, 28, 28, 0.094);
     width: 400px;
     margin: 0px auto;
+    margin-top: 10px;
+}
+
+#info-box h2{
+    margin: 0 0 30px 0;
+    color: #33333383;
+    font-size: 20px;
+}
+
+#name-tag{
+    margin: 10px 0;
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #610849, #b41a64);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#description-tag{
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+#price-tag{
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #610849;
+    text-align: right;
+    margin-top: 50px;
 }
 
 @media (min-width: 768px){
     #info-box{
-        width: 600px;
+        width: 55%;
         padding: 30px;
         margin: 30px auto;
     }
