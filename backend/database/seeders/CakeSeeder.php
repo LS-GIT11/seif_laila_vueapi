@@ -9,6 +9,6 @@ class CakeSeeder extends Seeder
 {
     public function run(): void
     {
-        Cake::factory(10)->create();
+        Cake::factory(30)->create();
     }
 }
