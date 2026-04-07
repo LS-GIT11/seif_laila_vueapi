@@ -24,6 +24,12 @@ const app = Vue.createApp({
                 })
                 .then(cakes => {
                     this.cakesData = cakes;
+                    gsap.from("#info-box",
+                        {
+                            opacity: 0,
+                            y: 50,
+                            duration: 1.3
+                        });
                 })
                 .catch(err => {
                     this.error = err.message;
@@ -61,6 +67,27 @@ const app = Vue.createApp({
         }
         
     }
+    
 });
 
 app.mount("#app");
+
+gsap.from("main",
+    {
+        opacity: 0,
+        duration: 1
+    });
+
+gsap.from("header",
+    {
+        opacity: 100,
+        y: -150,
+        duration: 1
+    });
+
+gsap.from("footer",
+    {
+        opacity: 100,
+        y: 150,
+        duration: 1
+    });
